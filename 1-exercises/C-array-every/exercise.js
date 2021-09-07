@@ -4,9 +4,13 @@
 
 var students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 var group = ["Austine", "Dany", "Swathi", "Daniel"];
-
-var groupIsOnlyStudents =group.every(isStudent); // complete this statement
-
+  
+function areStudents(group) {                      // this function was created to iterate over group array and check if anyone else 
+                                                  //present in addition to the students named in the other, students array. 
+ return students.includes(group);
+}
+var groupIsOnlyStudents =group.every(areStudents); // complete this statement // i had to create the function areStudents (see above)
+                                                   // the new variable calls the function areStudents
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");
 } else {

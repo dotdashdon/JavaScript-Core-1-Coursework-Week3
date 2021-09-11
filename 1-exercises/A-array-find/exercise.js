@@ -1,39 +1,29 @@
-/* 
-  You are given an array of names.
-  Using .find(), we'd like to find the first name which starts with A and is longer than 7 letters.
-  something that may be useful that I’m not sure we covered in the lesson is you can use && and || (and / or) operators in your arrow functions
-this is especially handy in .find() and .filter() as we’re able to test multiple conditions (much like in an if statement)
-for example
-myArray.filter(x => x > 3 && x < 7)  which in english would be “filter my array (myArray) of numbers, returning those that are greater than 3 and less than 7”
-myArray.filter(x => x < 1 || x > 10  which in english would be “filter my array (myArray) of numbers, returning those that are less than 1 or greater than 10" (edited) 
-*/
 
+  // You are given an array of names.
+  // Using .find(), we'd like to find the first name which starts with A and is longer than 7 letters.
+  
 // write your code here
 
+
+// This is declaring the array 
 const names = ["Rakesh", "Antonio","Alexandra","Andronicus","Annam","Mikey","Anastasia","Karim","Ahmed",
 ];
 
-
-
- function findLongNameThatStartsWithA(name){
-   return name.length >7;
+//This is creating a function that will iterate over the array and return a name that fulfills both that it starts with A (so is  [0] stating the location where the A needs to be or an empty array? ) 
+//and that is it is over letter letters long. 
+ function ThisIsLongNameThatStartsWithA(name) {
+   return name [0] === "A" && name.length > 7;
  }
 
+ //This is a function that enables us to find the first name which starts with A and is longer than 7 letters but this is done so by using the .find method. ThisIsLongNameThatStartsWithA is the callback. 
+function findLongNameThatStartsWithA(names) {
+  return names.find(ThisIsLongNameThatStartsWithA)
+}
 
-
-let longNameThatStartsWithA = findLongNameThatStartsWithA.find(names);
+//This is variable to store the function. We call this in the console.log to print the answer. 
+let longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
 console.log(longNameThatStartsWithA);
 
 /* EXPECTED OUTPUT */
 // "Alexandra"
-```js
-function isLongName(name) {
-  return name.length > 6;
-}
-```
-```js
-var longName = names.find(isLongName);
-
-console.log(longName); // logs Mozafar
-```

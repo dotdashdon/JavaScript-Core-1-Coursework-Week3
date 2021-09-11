@@ -16,7 +16,7 @@ var everyone = [
 ];
 
 var firstFive  =  everyone.slice(0, 5); // complete this statement
-var lastFive = everyone.slice(2, 7); // complete this statement
+var lastFive = everyone.slice(2, 7); // complete this statement Should this be length-1? What if I don't know the length of an array? 
 
 /* 
   DO NOT EDIT BELOW THIS LINE

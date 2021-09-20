@@ -3,15 +3,18 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+ return arr.slice(0,5);
 }
 
 /*
 Write a function that:
-- Accepts an array as a parameter.
-- Returns a new array containing the same elements, except sorted.
+- Accepts an array as a parameter. //in this case arr 
+- Returns a new array (USE .MAP?) containing the same elements, except sorted. USE .SORT 
+// needs .map method as this returns a new array.
 */
-function sortArray() {
+function sortArray(arr) {
+  return  arr.map((x) => arr).sort();
 }
 
 /*
@@ -20,33 +23,68 @@ Think about what is better about this solution than your one last week, and what
 
 Write a function that:
 - Takes an array of strings as input.
-- Removes any spaces in the beginning or end each string.
-- Removes any forward slashes (/) in the strings.
-- Makes the strings all lowercase.
+- Removes any spaces in the beginning or end each string. USE .TRIM 
+- Removes any forward slashes (/) in the strings. USE .REPLACE (/\//g,'') * from stackoverflow
+- Makes the strings all lowercase. USE .toLowerCase
 */
-function tidyUpString() {
-}
+
+function tidyUpString(array) {
+  return array.map((x) => x.trim().replace(/\//g,'').toLowerCase());
+} 
+/*
+What is this code doing ^ ? tidyUpString is a function which is going to execute the code in L32. 
+L32 begins with returning the parameter - array.  Array is appended to .map. 
+.map is a method that will, in this case, take in the callback functions of .trim .replace .toLowerCase 
+as an argument (??) and return it all in a new array. 
+The opening parenthesis on L32 '(' is the start of the enclosure of the code that needs to be evaluated .
+ I want the middle parentheses next to.map () containing x, to represent an element in the array and this will be iterated over by .map. 
+ The => on L32 removes the need to write 'function, {} or return' in the code. And the following .replace and .toLowerCase() are 
+ array methods presented as callback functions? 
+*/
+//could I have turned it into a variable like this? I guess not as variable do not have arguments and this ex. requires one? 
+//const tidyUpString =  array.map((x) => x.trim().replace(/\//g,'').toLowerCase());
+
+
 
 /*
 Write a function that:
 - Takes an array and an index as input.
-- Returns a new array containing the same elements, but without the element at the passed index.
+- Returns a new array containing the same elements, but without the element at the passed index.  USE .slice ? USE .map? 
 */
 
-function remove() {
+function remove(array,index) {
+  return array.slice(0,index).concat(array.slice(index + 1));
 }
+
+/* What is this ^ code doing? remove is a function that has two parameters - array and index. remove , as  function, 
+will return a new array with all the values/elements in it EXCEPT for that specified/passed in INDEX. THe returned array will be added 
+to the remaining array from point the index value/element was removed. 
+This was used to test it separately from the tests below. 
+let arr = [ 1,2, 5, 6, 8, 9, 1];
+function remove(arr, index) {
+  return arr.slice(0, index).concat(arr.slice(index + 1, arr.length));
+}
+console.log(remove(arr, 4));
 
 /*
 Write a function that:
-- Takes an array of numbers as input.
-- Returns an array of strings formatted as percentages (e.g. 10 => "10%").
-- The numbers must be rounded to 2 decimal places.
-- Numbers greater 100 must be replaced with 100.
+- Takes an array of numbers as input.USE (arrNum)
+- Returns an array of strings formatted as percentages (e.g. 10 => "10%"). USE .MAP to add % 
+- The numbers must be rounded to 2 decimal places. USE .toFIXED() or Math.round()
+- Numbers greater 100 must be replaced with 100. USE If arrNum >100 .replace 100
 */
+function formatPercentage(arrNum) {
 
-function formatPercentage() {
+	return arrNum.map(x => {
+
+		x = x.toFixed(2);
+
+		if (x >= 100) {
+			x = 100;
+		}
+		return `${x}%`;
+	});
 }
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {

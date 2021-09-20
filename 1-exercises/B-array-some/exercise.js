@@ -6,8 +6,7 @@
   - Do not edit any of the existing code
 */
 
-
-/// I think 'exited with code=1 in 0.793 seconds' is the correct result. Our buddy group discussed this with our tech mentor. We mostly discussed how the .exit is a function for the 
+//Our buddy group discussed this with our tech mentor. We mostly discussed how the .exit is a function for the 
 // process. .exit is a controlled manner of quitting the programme and helps to minimise errors. It is useful as it helps us to check that the data in the array is adequate for meeting 
 //the conditions. If it is not, it will exit the program and therefore help identify why it did not run (i.e. a data/array issue rather than a direct code issue). We didn't actually use .some however...
 
@@ -21,7 +20,7 @@ var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 function checkNullValue(pair){
-   if (pairsByIndex.includes(null)) process.exit(1); 
+   if (pairsByIndex.some(null)) process.exit(1); 
   }
 
 var pairs = pairsByIndex.map(function (indexes) {

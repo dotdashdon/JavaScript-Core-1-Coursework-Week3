@@ -20,9 +20,33 @@
   
   Let's first look at an example that will teach you how to use these methods.
 */
+//Requirements 
+// 1. Check to see if the bush has ALL PINK berries 
+// 2. Do not eat if any other non-pink berries are present
+///3. Return a message saying it is safe to eat and another to say it is not. 
+
+//Pseudo code 
+//need to check if every berry is pink 
+// If bush === pink then return message it is safe to eat. If not , return message, CAUTION, Avoid. 
+//
+// What does the code below mean? 
+//L33 declares the function and names an array as the parameter . The next line creates a
+// variable in which .every method is applied. .every is appended to the array and means that every berry 
+//will be checked due to the presence of the subsequent code which is another function (checkBerry). This (callback?)
+//function is stating that if the checked berry is equal to pink, return it. The if /else statement is outlining the
+//condition -saying safeBerries return true then state bush is safe to eat from. 
+
+
 
 function isBushSafe(berryArray) {
-  //Write your code here
+ let safeBerries =berryArray.every(checkedBerry =>{
+   return checkedBerry ==="pink"
+ })
+ if (safeBerries) {
+   return "Bush is safe to eat from" 
+ } else {
+    return "Toxic! Leave bush alone!"
+ }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

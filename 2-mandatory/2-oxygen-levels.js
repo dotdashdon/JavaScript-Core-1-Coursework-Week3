@@ -11,7 +11,35 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+//Requirements 
+// 1. Need to land on planet that has Oxygen levels between 19.5% and 23.5%.
+// 2. 
+///
+
+//Pseudo code 
+//find will stop at the first item that satisfies the function  -and then stop executing code. 
+//What is wrong with this in this case?
+
+//The function will do the following:
+//It will check if the array item has % in it
+//The substring will remove this % from the end of it 
+//This enables it to be converted into a number 
+// This number is checked to see if it is between 19.5(%) and 23.5(%)
+// if these  conditions inside the function are satisfied, 
+// the element is located  and the first element satisfying it will returned. 
+//
+//
+
+function findSafeOxygenLevel(arr) {
+  let safe = arr.find((item) =>{
+    if(item.includes("%")){
+    let item1 = item.substring(0, item.length - 1);
+    item1.toString()  ;
+    return (item1<23.5 && item1 > 19.5)}
+  })
+  return safe;
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -15,8 +15,25 @@
   
 */
 
-function getSettlers() {}
+//Requirements: 
+// 1. Filter families whose last name starts with A so they can STAY
+//2.  Other families with names who start B-Z should go. 
+//3. Return an array of those who will stay 
+//4. Only include elements who are stated 'family'
 
+//Pseudo Code 
+// 1. Create a function (getSettlers) that takes an array of families (families) and returns ones with an array that has only families that start
+//with the letter A and end with the string "family".
+// 2.  Declare the function getSettlers and have 'families' as the parameter. 
+// 3. State RETURN to families to indicate what the function will do ( return not print etc)
+//4. Append filter method to families. This will iterate over 'families' array and using boolean return a list containing 'true' 
+// to all elements containing family. 
+//5. 'family' is stated but could equally be element as this is what it is referring to. ? 
+//6. two methods are applied to the element/variable?  - startsWith and endsWith 
+//
+function getSettlers(families) {
+  return families.filter(family => family.startsWith("A") && family.endsWith(" family"));
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getSettlers function works", () => {

@@ -12,8 +12,7 @@
 // 2.  Filters those who are eligible 
 // 3. Return an array containing only the names of those who have attended >8 classes 
 
-
-function getEligibleStudents(){
+function getEligibleStudents(students) {
   const eligibleStudents = students.filter(function (student) {
     const attendanceCount = student[1];
     return attendanceCount >= 8;
@@ -23,6 +22,17 @@ function getEligibleStudents(){
   });
   return eligibleNames;
 }
+
+// function getEligibleStudents(){
+//   const eligibleStudents = students.filter(function (student) {
+//     const attendanceCount = student[1];
+//     return attendanceCount >= 8;
+//   });
+//   const eligibleNames = eligibleStudents.map(function (student) {
+//     return student[0];
+//   });
+//   return eligibleNames;
+// }
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getEligibleStudents function works", () => {
